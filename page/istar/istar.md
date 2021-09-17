@@ -5,6 +5,25 @@ permalink: /istar/
 ---
 
 ## Goal2UCM
+
+### Transformation Rules
+
+This section mainly explains how to map the target model to UML. We propose the following conversion rules. The correctness of the transformation rules is based on the semantic description of the target model and UML standard documents.
+
+#### Use Case Diagram
+When transforming the use case diagram, the whole transformation process will be divided into two parts. The first part is the conversion of Actor, and the second part is the conversion of usecase.
+
+##### Actor conversion
+In UML, an Actor is an external entity that interacts with the system. It can be a user, an external system that can interact with the system, or a basic device. In the Goal Model, Actors are divided into two categories, Role and Agent. Agent is a specific instance, such as a person, organization, or department. It is not suitable to convert Agent to Actor in UML because Agent is more specific and has more limitations. Role is an abstract description of a certain group of people, such as students. It is closer to the meaning of Actor in UML, so it can be converted directly.
+
+![image](https://user-images.githubusercontent.com/49606429/133743714-2ccc88b2-793b-4b15-bf58-897f244ca6d0.png)
+
+##### Use Case conversion
+The Use Case in UML describes the behavior of the system from the user's point of view. It describes the function of the system as a series of events, and finally provides valuable observations for the operator. In the Goal Model, a Goal is the state that the Actor wants to achieve, and there is a clear completion standard. They all describe behavior or state from the perspective of Actor, so they can be transformed. However, not all goals can be converted to Use Cases, only goals at the root can be converted. At present, we do not consider the situation when Goal is connected to another Goal through Refinement. This problem will be improved in the follow-up work.
+
+![image](https://user-images.githubusercontent.com/49606429/133743923-f9c1f0ce-7ba6-447e-8ad0-6844e39f4154.png)
+
+
 ### case study
   We will take the process of interaction between cashiers and customers in CoCoME (supermarket shopping system) in the RM2PT case as the case of this experiment. The description of this process is mainly as follows:
 
