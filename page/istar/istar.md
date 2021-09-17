@@ -48,3 +48,12 @@ UML system service consists of the following elements: Operation and Parameter. 
   Then create a Role type customer, which is used to simulate the user's operation. The user's goal is only one ‘PurchaseGoods’, which is set as the goal element. In order to achieve this goal, two tasks need to be done. The first one is to ProvideProductInformation, which is connected with the goal with ‘AndRefinement’. The second is ‘pay’, which is also linked to the target with ‘AndRefinement’. The next step is to complete the information exchange between the cashier and the user. When the cashier goes to the ‘enterItem’ task, the user's ‘ProvideProductInformation’ task needs to provide the cashier with relevant product information. Use Resource (which belongs to Dependency type) to create the elements barcode and quantity to be passed. The two tasks are connected by ‘dependeElmt / dependerElmt’. When the cashier goes to the "makeCashPayment" task, the user's "pay" task needs to provide the cashier with relevant commodity information, use Resource to create the element amount that needs to be passed, and connect the task through dependeElmt / dependerElmt. When the cashier goes to the ‘makeCardPayment’ task, the user's ‘pay’ task needs to provide the cashier with relevant commodity information, use resource to create the elements ‘CardAccountNumber’, ‘expiryDate’ and ‘fee’ that need to be passed, and connect the three tasks through ‘dependeElmt / dependerElmt’.
 
   The last part is the entity part. You can fill in the required entity information in this part. Here, you can fill in the information mentioned in the UML domain diagram in ‘CashDesk’, Cashier, Payment, CashPayment, CardPayment, Item and SalesLineItem, and add the Item and SalesLineItem in them, Connect with Resources’s barcode and quantity.
+  
+### The transformation goal of the case
+Next, we will give the ideal transformation result, which is divided into the following two parts. The first part is the Use Case Diagram, as shown in Fig. 10 which describes the relationship between user Cashier and his Use Case. Then there is the System Sequence diagram,shown in Fig. 11 which describes the Use Case ‘processSale’.
+
+![image](https://user-images.githubusercontent.com/49606429/133746673-d1d5377c-8951-4934-a099-248c82a6957e.png)
+
+![image](https://user-images.githubusercontent.com/49606429/133746720-136bf1a5-a4ab-46ac-8b96-48b83a9ff0b7.png)
+
+
