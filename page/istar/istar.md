@@ -96,7 +96,17 @@ When transforming the two models, we use ATL transformation language to transfor
 
 First, set the meta model of input and output. The input side is the target model, the meta model is abbreviated as is, and the output side is UML model, abbreviated as re. Convert ISTAR to requirementmodel and usecasemodel
 ### Use case diagram generation
+When transforming the use case diagram, the whole transformation process will be divided into two parts. The first part is the conversion of Actor, and the second part is the conversion of UseCase.
+#### Actor conversion
+In UML, an Actor is an external entity that interacts with the system. It can be a user, an external system that can interact with the system, or a basic device. In the Goal Model, Actors are divided into two categories, Role and Agent. Agent is a specific instance, such as a person, organization, or department. It is not suitable to convert Agent to Actor in UML because Agent is more specific and has more limitations.Role is an abstract description of a certain group of people, such as students. It is closer to the meaning of Actor in UML, so it can be converted directly.
 
+In istar2usecasemodel, the role in the target model is transformed into the actor of UML, and the goal in the root node part of the target model is transformed into us in UML, that is, the goal without refinement type connection is transformed into UC. And write their transformed role2actor and goal2uc, the internal elements and the relationship between them.
+
+The Task in iStar represents an action that the Actor wants to perform, usually to reach acertain Goal. The Task is corresponding to the following elements in use case model:Message and Operation. All of these elements may be involved to complete a single task in the entire UseCase. They describe the process of the same task. But if the Task is connected by multipleother Intentional Elements with OrRefinement, it will not be transformed in our case. Therules R3 and R4 describe the process of transforming Task in Goal Model into child elements CallMessage and ReturnMessageof message in UML.
+
+#### Operation and Parameter conversion
+The Task with the related Resource is corresponding to the following elements in UML:
+Operation and Parameter.Task is transformed into Operation, however, if the Task is connected by multiple other Intentional Elements with OrRefinement, it will not be transformed. The rule R5 describes the process of transforming Parameter in Goal Model into Operation in UML. The rule R6 describes the process of transforming Resource} in Goal Model into Parameter in UML.
 
 ## case study
   We will take the process of interaction between cashiers and customers in CoCoME (supermarket shopping system) in the RM2PT case as the case of this experiment. The description of this process is mainly as follows:
