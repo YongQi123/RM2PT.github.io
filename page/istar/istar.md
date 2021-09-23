@@ -91,6 +91,13 @@ UML system service consists of the following elements: Operation and Parameter. 
 **Transforming Task and Resource in Goal model into Service and Operation in UML：**
 ![image](https://user-images.githubusercontent.com/49606429/133744670-7bc9328d-77ec-49b3-8780-ca13d2b493bc.png)
 
+## Implementation of ISTAR to UML transformation
+When transforming the two models, we use ATL transformation language to transform the elements and relationships with the same semantics. The following is my conversion process.
+
+First, set the meta model of input and output. The input side is the target model, the meta model is abbreviated as is, and the output side is UML model, abbreviated as re. Convert ISTAR to requirementmodel and usecasemodel
+### Use case diagram generation
+
+
 ## case study
   We will take the process of interaction between cashiers and customers in CoCoME (supermarket shopping system) in the RM2PT case as the case of this experiment. The description of this process is mainly as follows:
 
