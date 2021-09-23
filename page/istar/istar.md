@@ -268,7 +268,7 @@ lazy rule Resource2Parameter {
   The last part is the entity part. You can fill in the required entity information in this part. Here, you can fill in the information mentioned in the UML domain diagram in ‘CashDesk’, Cashier, Payment, CashPayment, CardPayment, Item and SalesLineItem, and add the Item and SalesLineItem in them, Connect with Resources’s barcode and quantity.
   
 ## The transformation goal of the case
-Next, we will give the ideal transformation result, which is divided into the following two parts. The first part is the Use Case Diagram, as shown in Fig. 10 which describes the relationship between user Cashier and his Use Case. Then there is the System Sequence diagram,shown in Fig. 11 which describes the Use Case ‘processSale’.
+Next, we will give the ideal transformation result, which is divided into the following two parts. The first part is the Use Case Diagram, which describes the relationship between user Cashier and his Use Case. Then there is the System Sequence diagram,which describes the Use Case ‘processSale’.
 
 
 **UML use case diagram of supermarket shopping system：**
