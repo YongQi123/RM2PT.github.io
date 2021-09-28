@@ -135,4 +135,20 @@ Next, we will give the ideal transformation result, which is divided into the fo
 **UML system sequence diagram of supermarket shopping system：**
 ![image](https://user-images.githubusercontent.com/49606429/133746720-136bf1a5-a4ab-46ac-8b96-48b83a9ff0b7.png)
 
+## Evaluation Results and Discussion
+The transformation results are divided into the following two parts. The first part is a use case diagram, which describes the relationship between user Cashier and his/her UseCases. Then the system operations of the use cases processSale. 
+ The transformation success rate from the Goal model to the top-level use case diagram can be reaches 100%. The success rate of the system operation and message can be reaches 87.2%.
+ 
+**Transformation result table from Goal model to Use Case diagram:**
+
+
+Use Case diagram: 
+transform role in Goal model into Actor in UML. The goal in the root node part of the Goal model is transformed into UML UC , that is, the goal without Refinement type connection is transformed into UC. And connect them to their respective actors.
+
+
+System sequence diagram: 
+ each task in the Goal model is transformed into the corresponding interaction (Call Message, Return Message, Execution) and Service (Operation) in UML, and the Resource of Dependency in the Goal model is transformed into the corresponding Service (Operation) in UML.
+ 
+ 
+ Current overall conversion success rate from goal model to use case model.The transformation success rate of the top-level use case diagram is 100%. Due to the lack of the information about the parameters, the transformation success rate of system operations is 87.2%, and the overall transformation success rate is 93.6%.
 
