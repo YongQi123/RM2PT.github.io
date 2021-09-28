@@ -62,13 +62,18 @@ When transforming the use case diagram, the whole transformation process will be
 
 #### Actor conversion
 In UML, an Actor is an external entity that interacts with the system. It can be a user, an external system that can interact with the system, or a basic device. In the Goal Model, Actors are divided into two categories, Role and Agent. Agent is a specific instance, such as a person, organization, or department. It is not suitable to convert Agent to Actor in UML because Agent is more specific and has more limitations. Role is an abstract description of a certain group of people, such as students. It is closer to the meaning of Actor in UML, so it can be converted directly.
+**The rule R1 describes the process of transforming role in Goal model into Actor in UML:**
 
+![image](https://user-images.githubusercontent.com/49606429/135037184-5de23ffd-202a-4ea0-9335-ea5b58de3078.png)
 
 **Transforming Role in Goal model into Acter in UML：**
 ![image](https://user-images.githubusercontent.com/49606429/133743714-2ccc88b2-793b-4b15-bf58-897f244ca6d0.png)
 
 #### Use Case conversion
 The Use Case in UML describes the behavior of the system from the user's point of view. It describes the function of the system as a series of events, and finally provides valuable observations for the operator. In the Goal Model, a Goal is the state that the Actor wants to achieve, and there is a clear completion standard. They all describe behavior or state from the perspective of Actor, so they can be transformed. However, not all goals can be converted to Use Cases, only goals at the root can be converted. At present, we do not consider the situation when Goal is connected to another Goal through Refinement. This problem will be improved in the follow-up work.
+
+**Formula R2 describes the process of transforming Goal in Goal Model into UC in UML:**
+![image](https://user-images.githubusercontent.com/49606429/135037323-d25cc373-9a83-418b-ab65-ce185339bb26.png)
 
 
 **Transforming Goal in Goal model into UC in UML：**
@@ -80,6 +85,10 @@ When converting the System Sequence diagram, because the Use Case sequence diagr
 #### System Operation Conversion
 The Task in a Goal Model represents an action that the Actor wants to perform, usually to reach a certain Goal. The ‘Interaction’ part of UML is mainly composed of the following elements: ‘Message’, ‘Execution’ and ‘AbstractEnd’. All of these elements may be involved to complete a single task in the entire Use Case sequence diagram. They describe the process of the same task. So, we can convert the Task to the entire ‘Interaction’, but if the Task is connected by multiple other Intentional Elements with ‘OrRefinement’, it will not be converted in any way.
 
+**The rules R3 and R4 describe the process of transforming Task in Goal Model into child elements CallMessage and ReturnMessage of message in UML:**
+![image](https://user-images.githubusercontent.com/49606429/135037989-3e5231b2-3f8d-4043-9669-b20d0ccfed2a.png)
+![image](https://user-images.githubusercontent.com/49606429/135038006-af2d7e68-9aa6-452c-bf2d-f52af38da60c.png)
+
 
 **Transforming Task in Goal model into Interaction in UML：**
 ![image](https://user-images.githubusercontent.com/49606429/133744643-2417777f-eb05-46b8-945c-7e767d78a5d2.png)
@@ -87,170 +96,16 @@ The Task in a Goal Model represents an action that the Actor wants to perform, u
 #### System Service Conversion
 UML system service consists of the following elements: Operation and Parameter. If this part needs to be transformed, then the two elements in Goal model, Task and Resource, will also be transformed simultaneously. Task is transformed into Operation, however, if the Task is connected by multiple other Intentional Elements with ‘OrRefinement’, it will not be transformed. The physical entity or information entity that the resource participant needs to perform the task should be transformed into a parameter, so as to form a complete system service part.
 
+**The rule R5 describes the process of transforming Parameter in Goal Model into Operation in UML:**
+![image](https://user-images.githubusercontent.com/49606429/135038130-5857a12d-f937-41af-aee0-b63481736ba1.png)
+**The rule R6 describes the process of transforming Resource in Goal Model into Parameter in UML:**
+![image](https://user-images.githubusercontent.com/49606429/135038479-b967bf28-fb9e-44e6-9c65-007e4b00cb09.png)
+
 
 **Transforming Task and Resource in Goal model into Service and Operation in UML：**
 ![image](https://user-images.githubusercontent.com/49606429/133744670-7bc9328d-77ec-49b3-8780-ca13d2b493bc.png)
 
-## Implementation of ISTAR to UML transformation
-When transforming the two models, we use ATL transformation language to transform the elements and relationships with the same semantics. The following is my conversion process.
 
-First, set the meta model of input and output. The input side is the target model, the meta model is abbreviated as is, and the output side is UML model, abbreviated as re. Convert ISTAR to requirementmodel and usecasemodel
-
-```
-module istar2uml;
---@path newIstar=/istar2uml/newIstar.ecore
---@path REMODEL=/istar2uml/REMODEL.ecore
-create OUT : REMODEL from IN : newIstar;
-
-helper def: println(enu: OclAny): OclAny =
-	enu.debug();
-
-rule istar2RequirementModel {
-	from
-		is : newIstar!istar
-	to 
-		re : REMODEL!RequirementModel (
-			UseCaseModel <- thisModule.istar2UseceseModel(is)
-		)
-	do{
-		--thisModule.println(UseCaseModel);
-	}
-	
-}
-```
-
-### Use case diagram generation
-When transforming the use case diagram, the whole transformation process will be divided into two parts. The first part is the conversion of Actor, and the second part is the conversion of UseCase.
-
-In UML, an Actor is an external entity that interacts with the system. It can be a user, an external system that can interact with the system, or a basic device. In the Goal Model, Actors are divided into two categories, Role and Agent. Agent is a specific instance, such as a person, organization, or department. It is not suitable to convert Agent to Actor in UML because Agent is more specific and has more limitations.Role is an abstract description of a certain group of people, such as students. It is closer to the meaning of Actor in UML, so it can be converted directly.
-
-The rule 'Role2Actor' describes the process of transforming role in Goal model into actor in UML.Formula 'Goal2UC' describes the process of transforming Goal in Goal Model into UC in UML.
-The UseCase describes the function of the system as a series of events and provides valuable observations for the operator. In the Goal Model, a Goal is a state that the Actor wants to achieve, and there is a clear completion standard. They all describe behavior or state from the perspective of Actor, so they can be transformed. However, not all goals can be converted to UseCase, only goals at the root can be converted. At present, we do not consider the situation when Goal is connected to another Goal through Refinement. This problem will be improved in the follow-up work.
-
-```
-lazy rule istar2UseceseModel {
-	from
-		is : newIstar!istar
-	to 
-		um : REMODEL!UseCaseModel (
-			
-			uc <-is.actor->collect(e|e.intentionalelement)->flatten()
-      ->select(e | e.oclIsTypeOf(newIstar!Goal))
-      ->collect(e | thisModule.Goal2UC(e)),
-			
-			actor <- is.actor->collect(e | thisModule.Role2Actor(e)),
-			
-			service <-is.actor->collect(e | thisModule.Task2Service(e)),
-		
-			interaction <-is.actor->collect(e | thisModule.Task2Interaction(e))
-		)
-
-}
-lazy rule Role2Actor {
-	from
-			role: newIstar!Role
-	to
-			t:REMODEL!Actor(
-					name <- role.name,
-					uc <- REMODEL!UC.allInstances()
-          ->select(uc | role.intentionalelement->select(e | e.oclIsTypeOf(newIstar!Goal))
-          ->exists(g|g.name=uc.name))				
-			)
-}
-lazy rule Goal2UC {
-	from
-			s: newIstar!Goal
-	to
-			t:REMODEL!UC(
-					name <- s.name
-			)
-}
-
-```
-
-### Message conversion
-The Task in iStar represents an action that the Actor wants to perform, usually to reach acertain Goal. The Task is corresponding to the following elements in use case model:Message and Operation. All of these elements may be involved to complete a single task in the entire UseCase. They describe the process of the same task. But if the Task is connected by multipleother Intentional Elements with OrRefinement, it will not be transformed in our case. Therules 'Task2CallMessage' and 'Task2ReturnMessage' describe the process of transforming Task in Goal Model into child elements CallMessage and ReturnMessageof message in UML.
-
-```
-
-lazy rule Task2Interaction
-{
-	
-	from
-			inten: newIstar!Actor
-	to
-			t:REMODEL!Interaction
-			(
-				name <- inten.name,
-				
-				messages<-inten.intentionalelement
-        ->select(e | e.oclIsTypeOf(newIstar!Task))
-        ->collect(e | thisModule.Task2CallMessages(e)),
-				
-				messages<-inten.intentionalelement
-        ->select(e | e.oclIsTypeOf(newIstar!Task))
-        ->collect(e | thisModule.Task2Returnmessages(e)),		
-}
-lazy rule Task2CallMessages {
-	from
-			is: newIstar!Task
-	to		
-			call:REMODEL!CallMessage(
-				name <- is.name
-			)
-}
-lazy rule Task2Returnmessages {
-	from
-			is: newIstar!Task
-	to	
-			r:REMODEL!ReturnMessage(
-					name <- is.name + 'Return'
-			)
-}
-
-```
-
-
-### Operation and Parameter conversion
-The Task with the related Resource is corresponding to the following elements in UML:
-Operation and Parameter.Task is transformed into Operation, however, if the Task is connected by multiple other Intentional Elements with OrRefinement, it will not be transformed. The rule 'Task2Operation' describes the process of transforming Parameter in Goal Model into Operation in UML. The rule 'Resource2Parameter' describes the process of transforming Resource} in Goal Model into Parameter in UML.
-
-```
-lazy rule Task2Service
-{
-	from
-			inten: newIstar!Actor
-	to
-			t:REMODEL!Service
-			(
-				name <- inten.name,
-				operation<-inten.intentionalelement
-			)
-}
-
-lazy rule Task2Operation {
-
-	from
-			is: newIstar!Task
-	to
-			op1:REMODEL!Operation(
-					name <- is.name,
-					parameter <-newIstar!Dependency.allInstances()
-          ->select(e | e.dependeeElmt.oclIsTypeOf(newIstar!Resource))
-          ->collect(e | thisModule.Resource2Parameter(e))
-				)	
-}
-
-lazy rule Resource2Parameter {
-	from
-			s: newIstar!Resource
-	to
-			t:REMODEL!Parameter(
-					name <- s.name
-			)
-}
-
-```
 
 ## case study
   We will take the process of interaction between cashiers and customers in CoCoME (supermarket shopping system) in the RM2PT case as the case of this experiment. The description of this process is mainly as follows:
