@@ -171,7 +171,7 @@ System sequence diagram:
  **Table of transformation results from target model to UML model:**
 |Name|Use Case diagram|System Operations|Success rate|
 |:-----:|:-----:|:-----:|:-----:|
-|Goal2UML|100%|87.2%|93.%|
+|Goal2UML|100%|87.2%|93.6%|
 
  Current overall conversion success rate from goal model to use case model.The transformation success rate of the top-level use case diagram is 100%. Due to the lack of the information about the parameters, the transformation success rate of system operations is 87.2%, and the overall transformation success rate is 93.6%.
 
