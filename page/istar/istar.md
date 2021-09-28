@@ -98,6 +98,7 @@ UML system service consists of the following elements: Operation and Parameter. 
 
 **The rule R5 describes the process of transforming Parameter in Goal Model into Operation in UML:**
 ![image](https://user-images.githubusercontent.com/49606429/135038130-5857a12d-f937-41af-aee0-b63481736ba1.png)
+
 **The rule R6 describes the process of transforming Resource in Goal Model into Parameter in UML:**
 ![image](https://user-images.githubusercontent.com/49606429/135038479-b967bf28-fb9e-44e6-9c65-007e4b00cb09.png)
 
@@ -139,16 +140,38 @@ Next, we will give the ideal transformation result, which is divided into the fo
 The transformation results are divided into the following two parts. The first part is a use case diagram, which describes the relationship between user Cashier and his/her UseCases. Then the system operations of the use cases processSale. 
  The transformation success rate from the Goal model to the top-level use case diagram can be reaches 100%. The success rate of the system operation and message can be reaches 87.2%.
  
-**Transformation result table from Goal model to Use Case diagram:**
+**Transformation result from Goal model to Use Case diagram**
 
+ ![image](https://user-images.githubusercontent.com/49606429/135118444-cda281b9-ed12-4dc8-86ac-aa3b9c4da8d6.png)
+
+
+**Table of transformation results from target model to use case diagram：**
+|Name|Actor|Use Case|Use Case diagram relationships|Success rate|
+|:-----:|:-----:|:-----:|:-----:|:-----:|
+|Goal2UML|2/2|4/4|4/4|100%|
 
 Use Case diagram: 
 transform role in Goal model into Actor in UML. The goal in the root node part of the Goal model is transformed into UML UC , that is, the goal without Refinement type connection is transformed into UC. And connect them to their respective actors.
 
 
+**Conversion results from Goal model to system sequence diagram:**
+
+![image](https://user-images.githubusercontent.com/49606429/135118796-832061ed-dab7-42bb-a600-7e9f3f5f8bfd.png)
+
+**Table of transformation results from the Goal model to the system sequence diagram：**
+
+
+|Name|System operation|System service|Success rate|
+|:-----:|:-----:|:-----:|:-----:|
+|Goal2UML|35/47|17/17|87.2%|
+
 System sequence diagram: 
  each task in the Goal model is transformed into the corresponding interaction (Call Message, Return Message, Execution) and Service (Operation) in UML, and the Resource of Dependency in the Goal model is transformed into the corresponding Service (Operation) in UML.
  
- 
+ **Table of transformation results from target model to UML model:**
+|Name|Use Case diagram|System Operations|Success rate|
+|:-----:|:-----:|:-----:|:-----:|
+|Goal2UML|100%|87.2%|93.%|
+
  Current overall conversion success rate from goal model to use case model.The transformation success rate of the top-level use case diagram is 100%. Due to the lack of the information about the parameters, the transformation success rate of system operations is 87.2%, and the overall transformation success rate is 93.6%.
 
