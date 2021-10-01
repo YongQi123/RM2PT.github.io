@@ -74,6 +74,7 @@ In UML, an Actor is an external entity that interacts with the system. It can be
 The Use Case in UML describes the behavior of the system from the user's point of view. It describes the function of the system as a series of events, and finally provides valuable observations for the operator. In the Goal Model, a Goal is the state that the Actor wants to achieve, and there is a clear completion standard. They all describe behavior or state from the perspective of Actor, so they can be transformed. However, not all goals can be converted to Use Cases, only goals at the root can be converted. At present, we do not consider the situation when Goal is connected to another Goal through Refinement. This problem will be improved in the follow-up work.
 
 **Formula R2 describes the process of transforming Goal in Goal Model into UC in UML:**
+
 ![image](https://user-images.githubusercontent.com/49606429/135037323-d25cc373-9a83-418b-ab65-ce185339bb26.png)
 
 
