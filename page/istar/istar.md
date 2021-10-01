@@ -62,6 +62,7 @@ When transforming the use case diagram, the whole transformation process will be
 
 #### Actor conversion
 In UML, an Actor is an external entity that interacts with the system. It can be a user, an external system that can interact with the system, or a basic device. In the Goal Model, Actors are divided into two categories, Role and Agent. Agent is a specific instance, such as a person, organization, or department. It is not suitable to convert Agent to Actor in UML because Agent is more specific and has more limitations. Role is an abstract description of a certain group of people, such as students. It is closer to the meaning of Actor in UML, so it can be converted directly.
+
 **The rule R1 describes the process of transforming role in Goal model into Actor in UML:**
 
 ![image](https://user-images.githubusercontent.com/49606429/135037184-5de23ffd-202a-4ea0-9335-ea5b58de3078.png)
@@ -86,6 +87,7 @@ When converting the System Sequence diagram, because the Use Case sequence diagr
 The Task in a Goal Model represents an action that the Actor wants to perform, usually to reach a certain Goal. The ‘Interaction’ part of UML is mainly composed of the following elements: ‘Message’, ‘Execution’ and ‘AbstractEnd’. All of these elements may be involved to complete a single task in the entire Use Case sequence diagram. They describe the process of the same task. So, we can convert the Task to the entire ‘Interaction’, but if the Task is connected by multiple other Intentional Elements with ‘OrRefinement’, it will not be converted in any way.
 
 **The rules R3 and R4 describe the process of transforming Task in Goal Model into child elements CallMessage and ReturnMessage of message in UML:**
+
 ![image](https://user-images.githubusercontent.com/49606429/135037989-3e5231b2-3f8d-4043-9669-b20d0ccfed2a.png)
 ![image](https://user-images.githubusercontent.com/49606429/135038006-af2d7e68-9aa6-452c-bf2d-f52af38da60c.png)
 
