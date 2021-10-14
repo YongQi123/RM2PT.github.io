@@ -42,7 +42,7 @@ Neededby relationship links a task to a qesource, indicating that participants n
 
 
 **iStar Metamodel：**
-![image](https://user-images.githubusercontent.com/49606429/134271842-f02e85a4-03e3-4dfb-b02f-40bc453e1c97.png)
+<img src="/imgs/IStarMM.png" alt="Alt text" style="zoom:67%;" />
 
 ### UML Metamodels
 
