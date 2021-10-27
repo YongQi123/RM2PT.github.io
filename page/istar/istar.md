@@ -51,7 +51,7 @@ In this article, we will mainly use the UseCasaModel part to explain. The UseCas
 
 **UML Metamodels：**
 
-<img src="/imgs/iStar/UmlMM.png" alt="Alt text" style="zoom:67%;" />
+<img src="/imgs/IStar/UmlMM.png" alt="Alt text" style="zoom:67%;" />
 
 
 ## Transformation Rules
