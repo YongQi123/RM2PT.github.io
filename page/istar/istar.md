@@ -42,7 +42,7 @@ Neededby relationship links a task to a qesource, indicating that participants n
 
 
 **iStar Metamodel：**
-<img src="/imgs/iStar/IStarMM.png" alt="Alt text" style="zoom:67%;" />
+<img src="/imgs/IStar/IStarMM.png" alt="Alt text" style="zoom:67%;" />
 
 ### UML Metamodels
 
@@ -67,11 +67,11 @@ In UML, an Actor is an external entity that interacts with the system. It can be
 **The rule R1 describes the process of transforming role in Goal model into Actor in UML:**
 
 
-<img src="/imgs/iStar/R1.png" alt="Alt text" style="zoom:67%;" />
+<img src="/imgs/IStar/R1.png" alt="Alt text" style="zoom:67%;" />
 
 **Transforming Role in Goal model into Acter in UML：**
 
-<img src="/imgs/iStar/Role2Actor.png" alt="Alt text" style="zoom:67%;" />
+<img src="/imgs/IStar/Role2Actor.png" alt="Alt text" style="zoom:67%;" />
 
 #### Use Case conversion
 The Use Case in UML describes the behavior of the system from the user's point of view. It describes the function of the system as a series of events, and finally provides valuable observations for the operator. In the Goal Model, a Goal is the state that the Actor wants to achieve, and there is a clear completion standard. They all describe behavior or state from the perspective of Actor, so they can be transformed. However, not all goals can be converted to Use Cases, only goals at the root can be converted. At present, we do not consider the situation when Goal is connected to another Goal through Refinement. This problem will be improved in the follow-up work.
@@ -79,12 +79,12 @@ The Use Case in UML describes the behavior of the system from the user's point o
 **Formula R2 describes the process of transforming Goal in Goal Model into UC in UML:**
 
 
-<img src="/imgs/iStar/R2.png" alt="Alt text" style="zoom:67%;" />
+<img src="/imgs/IStar/R2.png" alt="Alt text" style="zoom:67%;" />
 
 
 **Transforming Goal in Goal model into UC in UML：**
 
-<img src="/imgs/iStar/Goal2UC.png" alt="Alt text" style="zoom:67%;" />
+<img src="/imgs/IStar/Goal2UC.png" alt="Alt text" style="zoom:67%;" />
 
 
 ### System Sequence Diagram
@@ -96,29 +96,29 @@ The Task in a Goal Model represents an action that the Actor wants to perform, u
 **The rules R3 and R4 describe the process of transforming Task in Goal Model into child elements CallMessage and ReturnMessage of message in UML:**
 
 
-<img src="/imgs/iStar/R3.png" alt="Alt text" style="zoom:67%;" />
-<img src="/imgs/iStar/R4.png" alt="Alt text" style="zoom:67%;" />
+<img src="/imgs/IStar/R3.png" alt="Alt text" style="zoom:67%;" />
+<img src="/imgs/IStar/R4.png" alt="Alt text" style="zoom:67%;" />
 
 
 **Transforming Task in Goal model into Interaction in UML：**
 
-<img src="/imgs/iStar/Task2Message.png" alt="Alt text" style="zoom:67%;" />
+<img src="/imgs/IStar/Task2Message.png" alt="Alt text" style="zoom:67%;" />
 
 #### System Service Conversion
 UML system service consists of the following elements: Operation and Parameter. If this part needs to be transformed, then the two elements in Goal model, Task and Resource, will also be transformed simultaneously. Task is transformed into Operation, however, if the Task is connected by multiple other Intentional Elements with ‘OrRefinement’, it will not be transformed. The physical entity or information entity that the resource participant needs to perform the task should be transformed into a parameter, so as to form a complete system service part.
 
 **The rule R5 describes the process of transforming Parameter in Goal Model into Operation in UML:**
 
-<img src="/imgs/iStar/R5.png" alt="Alt text" style="zoom:67%;" />
+<img src="/imgs/IStar/R5.png" alt="Alt text" style="zoom:67%;" />
 
 **The rule R6 describes the process of transforming Resource in Goal Model into Parameter in UML:**
 
-<img src="/imgs/iStar/R6.png" alt="Alt text" style="zoom:67%;" />
+<img src="/imgs/IStar/R6.png" alt="Alt text" style="zoom:67%;" />
 
 
 **Transforming Task and Resource in Goal model into Service and Operation in UML：**
 
-<img src="/imgs/iStar/Resource2Operation.png" alt="Alt text" style="zoom:67%;" />
+<img src="/imgs/IStar/Resource2Operation.png" alt="Alt text" style="zoom:67%;" />
 
 
 
@@ -128,7 +128,7 @@ UML system service consists of the following elements: Operation and Parameter. 
 
 **Goal model of supermarket shopping system：**
 
-<img src="/imgs/iStar/iStarCoCoME.png" alt="Alt text" style="zoom:67%;" />
+<img src="/imgs/IStar/iStarCoCoME.png" alt="Alt text" style="zoom:67%;" />
 
 
   First, cashier can perform three actions: OpenCashDesk, CloseCashDesk and processSale. This part constitutes a simple use case diagram. The ‘processSale’ action, can be expanded  to get the system sequence diagram. This part mainly reflects the interaction with customers. First, makeNewSale is initiated and then the enterItem loop is initiated, requiring the customers to provide the cashier with barcode and quantity information about the goods until it ends. then we proceed to the next action, endSale. Finally, a selection to either MakeCashPayment or MakeCardPayment is needed. If cash payment is chosen, a specific amount is required. If on the other hand card payment chosen, the card account number, expiry date and fee is required. The last part is the domain model, which mainly preserves the entity data of the above process. The stored data include ‘cashDesk’, cashier, payment, ‘cashPayment’, ‘cardPayment’, item and ‘salesLineItem’.
@@ -147,12 +147,12 @@ Next, we will give the ideal transformation result, which is divided into the fo
 
 
 
-<img src="/imgs/iStar/UCCoCoME.png" alt="Alt text" style="zoom:67%;" />
+<img src="/imgs/IStar/UCCoCoME.png" alt="Alt text" style="zoom:67%;" />
 
 
 **UML system sequence diagram of supermarket shopping system：**
 
-<img src="/imgs/iStar/SSCoCoME.png" alt="Alt text" style="zoom:67%;" />
+<img src="/imgs/IStar/SSCoCoME.png" alt="Alt text" style="zoom:67%;" />
 
 ## Evaluation Results and Discussion
 The transformation results are divided into the following two parts. The first part is a use case diagram, which describes the relationship between user Cashier and his/her UseCases. Then the system operations of the use cases processSale. 
@@ -161,7 +161,7 @@ The transformation results are divided into the following two parts. The first p
 **Transformation result from Goal model to Use Case diagram**
 
 
- <img src="/imgs/iStar/UCCoCoMET.png" alt="Alt text" style="zoom:67%;" />
+ <img src="/imgs/IStar/UCCoCoMET.png" alt="Alt text" style="zoom:67%;" />
 
 
 **Table of transformation results from target model to use case diagram：**
@@ -176,7 +176,7 @@ transform role in Goal model into Actor in UML. The goal in the root node part o
 **Conversion results from Goal model to system sequence diagram:**
 
 
-<img src="/imgs/iStar/SSCoCoMET.png" alt="Alt text" style="zoom:67%;" />
+<img src="/imgs/IStar/SSCoCoMET.png" alt="Alt text" style="zoom:67%;" />
 
 **Table of transformation results from the Goal model to the system sequence diagram：**
 
