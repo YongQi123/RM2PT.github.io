@@ -52,7 +52,7 @@ permalink: /UseCaseEditor/
 在系统中，用于指定特性，用关键字Where表示 syntax : WHERE (feature is included) the (system name) shall (system response)
 例子: “Where the control system includes an overspeed protection function, the control system shall test the availability of the overspeed protection function prior to aircraft dispatch.” 例子：控制系统包括超速保护功能的，控制系统应在飞机调度前测试超速保护功能的可用性。
 
-  <img src="/imgs/UseCaseEditor-project/EARS1.png" />
+  <img src="/imgs/UseCaseEditor-project/EARS2.png" />
 
    
 ### 案例讲解
@@ -69,7 +69,7 @@ permalink: /UseCaseEditor/
   
 ## 案例：
 
-<img src="/imgs/UseCaseEditor-project/AL.png" />
+<img src="/imgs/UseCaseEditor-project/ALZ.png" />
 
   
 # Use Case Editor安装说明：
