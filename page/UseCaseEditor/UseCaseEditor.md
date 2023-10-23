@@ -67,33 +67,3 @@ This section uses a basic form of natural language description to supplement the
 例子: “Where the control system includes an overspeed protection function, the control system shall test the availability of the overspeed protection function prior to aircraft dispatch.” 例子：控制系统包括超速保护功能的，控制系统应在飞机调度前测试超速保护功能的可用性。
 
   <img src="/imgs/UseCaseEditor-project/EARS1.png" />
-
-
-
-  
-# Use Case Editor安装说明：
-
-1.[GitHub下载地址](https://github.com/YongQi123/iStar2UML/tree/main/UseCaseEditor)
-
-<img src="/imgs/UseCaseEditor-project/AL1.png" />
-
-2.在RM2PT工具中，从主菜单栏Help → Install New Software 打开安装窗口。
-
-<img src="/imgs/UseCaseEditor-project/AL3.png" />
-
-3.点击Add，在弹出窗口中点击Archive，选择之前下载的.zip文件，点击Add确认添加。
-
-<img src="/imgs/UseCaseEditor-project/AL4.png" />
-
-4.添加.zip(即updatesite文件)之后，在下方会出现图1中的Feature，勾选之后默认Next即可安装。
-
-<img src="/imgs/UseCaseEditor-project/AL5.png" />
-
-5.安装过程中，出现提示，选择Install anyway。
-
-6.安装完成后，软件提示重启以生效，重启即可。
-
-7.重启后在任意文件夹下新建后缀名为.re的文件，按后续介绍书写自然语言需求，关键词会出现高亮，说明插件安装成功。
-
-<img src="/imgs/UseCaseEditor-project/AL6.png" />
-
