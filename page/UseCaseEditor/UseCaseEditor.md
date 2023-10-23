@@ -7,28 +7,36 @@ permalink: /UseCaseEditor/
 
 # Use Case Editor主要结构：
 
-   自然语言编译器主要由用例描述组成，我们将以用户故事的形式展现，用户在书写需求时可以将用例描述细化为两个部分：1.基本流程：该部分主要以EARS形式呈现，用户在书写时可以描述当前需求为用户需求或者系统需求以及他们之间的执行顺序。2.补充信息：该部分主要的书写内容为，在当前用例下，在与遇到特殊情况系统应当作出怎样的行动。
+   The natural language compiler consists mainly of use case descriptions, which we will present in the form of user stories. Users can refine the use case descriptions into four parts when writing requirements:.
+1. User Story \ Pre and Post Conditions: This part mainly describes the user story and the pre and post conditions of the user story.
+2. Basic Process: This section is mainly presented in the form of EARS, in which the user can describe the current requirement as a user requirement or a system requirement and the order of execution between them.
+3. Extended Processes: the main content of this part of the writing, in the current use case, in the case of encountering special circumstances, the system should make how to act.
+4. Non-Functional Requirements: This section describes the non-functional requirements of a single user story.
 
 <img src="/imgs/UseCaseEditor-project/JG1.png" />
 
-## 用例描述（用户故事形式）：
+## User Story \ Pre and Post Conditions：
 
-### 用户故事
-   用户故事更容易理解，用户故事基本不包含专业术语，若组织成故事，那么会增强人们对故事的记忆。其结构较为简单方便更改，在客户，开发人员及用户之间谈论需求时，短时间的及时反馈能促进相互学习与理解。
-   
-   一个完整的用户故事包含三个要素：
-   角色（who）：谁要使用这个
-   活动（what）：要完成什么活动
-   价值（value）：为什么要这么做，这么做能带来什么价值
+   This section takes the form of a basic user story as a <User Persona>, I want to <Complete Activity>, in order to <Realise Value>. Both preconditions and postconditions are optional, and different preconditions and postconditions can be replaced by ". "Spaced out.
+The red fields in the case are required and the purple fields are optional.
 
 
-### 案例讲解
-   该部分采用基础用户故事形式，作为一个<用户角色>, 我想要<完成活动>, 以便于<实现价值>。案例中红色字段为必填项，紫色字段为选填项。
+
+## Basic Process
+   This part of the basic EARS form, this part of the overall optional, when the need for an internal description of the use case to fill in, which NUM. after the need to express the current needs of the user needs or system requirements (User / System), in addition to the case of the red field is required, the purple field is optional.
    
    <img src="/imgs/UseCaseEditor-project/US.png" />
 
 
-## 用例内部表述（EARS形式）案例：
+## Extended Processes
+This section uses a basic form of natural language description to supplement the details of the requirements. In addition, the red fields in the case are mandatory and the purple fields are optional , supplementing the details.
+
+### (Method of numbering)
+
+### (User and System)
+
+## Non-Functional Requirements
+
 
 ### EARS
    在软件工程中，NL需求文档中可能 出现的一些问题：歧义、模糊性、复杂性、重复、需求的不恰当、不 可测试性。为了消除这些问题，引入了半结构化的自然语言Easy Approach to Requirements Syntax（EARS）。EARS是半结构化自然语言，相对简单，易于学习。EARS是一 种使用五个简单模板编写SRS文档的方法。 
