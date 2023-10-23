@@ -13,7 +13,7 @@ permalink: /UseCaseEditor/
 3. Extended Processes: the main content of this part of the writing, in the current use case, in the case of encountering special circumstances, the system should make how to act.
 4. Non-Functional Requirements: This section describes the non-functional requirements of a single user story.
 
-<img src="/imgs/UseCaseEditor-project/US.png" />
+<img src="/imgs/UseCaseEditor-project/UCE2.png" />
 
 ## User Story \ Pre and Post Conditions：
 
@@ -66,24 +66,9 @@ This section uses a basic form of natural language description to supplement the
 在系统中，用于指定特性，用关键字Where表示 syntax : WHERE (feature is included) the (system name) shall (system response)
 例子: “Where the control system includes an overspeed protection function, the control system shall test the availability of the overspeed protection function prior to aircraft dispatch.” 例子：控制系统包括超速保护功能的，控制系统应在飞机调度前测试超速保护功能的可用性。
 
-  <img src="/imgs/UseCaseEditor-project/EARS2.png" />
+  <img src="/imgs/UseCaseEditor-project/EARS1.png" />
 
-   
-### 案例讲解
-   该部分采用基础EARS形式，本部分整体为选填项，当需要对用例进行内部描述时进行填写，其中NUM.后面的需要表述当前需求是用户需求还是系统需求（User/System），另外案例中红色字段为必填项，紫色字段为选填项。
- 
-  <img src="/imgs/UseCaseEditor-project/EARSn.png" />
 
-## 补充信息案例：
-
-   该部分采用基本的自然语言描述形式，对需求的细节进行补充，另外案例中红色字段为必填项，紫色字段为选填项，对细节进行补充。
-
- <img src="/imgs/UseCaseEditor-project/KCn.png" />
-
-  
-## 案例：
-
-<img src="/imgs/UseCaseEditor-project/ALZ.png" />
 
   
 # Use Case Editor安装说明：
