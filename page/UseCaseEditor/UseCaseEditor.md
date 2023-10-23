@@ -13,30 +13,36 @@ permalink: /UseCaseEditor/
 3. Extended Processes: the main content of this part of the writing, in the current use case, in the case of encountering special circumstances, the system should make how to act.
 4. Non-Functional Requirements: This section describes the non-functional requirements of a single user story.
 
-<img src="/imgs/UseCaseEditor-project/JG1.png" />
+<img src="/imgs/UseCaseEditor-project/US.png" />
 
 ## User Story \ Pre and Post Conditions：
 
    This section takes the form of a basic user story as a <User Persona>, I want to <Complete Activity>, in order to <Realise Value>. Both preconditions and postconditions are optional, and different preconditions and postconditions can be replaced by ". "Spaced out.
 The red fields in the case are required and the purple fields are optional.
 
-
+<img src="/imgs/UseCaseEditor-project/US.png" />
 
 ## Basic Process
-   This part of the basic EARS form, this part of the overall optional, when the need for an internal description of the use case to fill in, which NUM. after the need to express the current needs of the user needs or system requirements (User / System), in addition to the case of the red field is required, the purple field is optional.
-   
-   <img src="/imgs/UseCaseEditor-project/US.png" />
 
+<img src="/imgs/UseCaseEditor-project/BP.png" />
+   This part of the basic EARS form, this part of the overall optional, when the need for an internal description of the use case to fill in, which NUM. after the need to express the current needs of the user needs or system requirements (User / System), in addition to the case of the red field is required, the purple field is optional.
+<img src="/imgs/UseCaseEditor-project/BP2.png" />
 
 ## Extended Processes
+
+<img src="/imgs/UseCaseEditor-project/EP.png" />
 This section uses a basic form of natural language description to supplement the details of the requirements. In addition, the red fields in the case are mandatory and the purple fields are optional , supplementing the details.
 
+
+
 ### (Method of numbering)
+<img src="/imgs/UseCaseEditor-project/EP2.png" />
 
 ### (User and System)
+<img src="/imgs/UseCaseEditor-project/EP3.png" />
 
 ## Non-Functional Requirements
-
+<img src="/imgs/UseCaseEditor-project/NF.png" />
 
 ### EARS
    在软件工程中，NL需求文档中可能 出现的一些问题：歧义、模糊性、复杂性、重复、需求的不恰当、不 可测试性。为了消除这些问题，引入了半结构化的自然语言Easy Approach to Requirements Syntax（EARS）。EARS是半结构化自然语言，相对简单，易于学习。EARS是一 种使用五个简单模板编写SRS文档的方法。 
